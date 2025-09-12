@@ -126,7 +126,9 @@ export default function Footer() {
             </address>
           </div>
         </div>
-
+        <div className="border-white/10 mt-10 pt-6 text-center text-white/50 text-base font-light">
+          <p>Todas las imágenes de este sitio están protegidas por derechos de autor, pertenecen a su creador y no pueden ser utilizadas sin autorización previa.</p>
+        </div>        
         <div className="border-t border-white/10 mt-20 pt-12 text-center text-white/50 text-base font-light">
           <p>&copy; {new Date().getFullYear()} Trinova. Todos los derechos reservados.</p>
         </div>

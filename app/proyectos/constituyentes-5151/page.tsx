@@ -44,32 +44,27 @@ export default function Constituyentes5151Page() {
       caption: "Fachada moderna con amplios balcones",
     },
     {
-      src: "/images/lobby-entrance.jpg",
+      src: "/images/Obra-Constituyentes-Hall.jpg",
       alt: "Hall de entrada Constituyentes 5151",
       caption: "Hall de entrada con diseño contemporáneo",
     },
     {
-      src: "/images/apartment-living.jpg",
+      src: "/images/Obra-Constituyentes-luz-natural.jpg",
       alt: "Living de departamento",
       caption: "Amplios espacios con excelente iluminación natural",
     },
     {
-      src: "/images/terrace-outdoor.jpg",
-      alt: "Terraza común",
-      caption: "Terraza verde con espacios de esparcimiento",
+      src: "/images/Obra-Constituyentes-SUM.jpg",
+      alt: "SUM común",
+      caption: "SUM con terraza equipada",
     },
     {
-      src: "/images/apartment-dining.png",
+      src: "/images/monoambiente-bedroom.jpg",
       alt: "Comedor integrado",
-      caption: "Ambientes integrados con acabados premium",
+      caption: "Ambientes con acabados premium",
     },
     {
-      src: "/images/studio-loft.png",
-      alt: "Estudio tipo loft",
-      caption: "Unidades diseñadas para maximizar el espacio",
-    },
-    {
-      src: "/images/kitchen-modern.jpg",
+      src: "/images/Obra-Constituyentes-cocina.jpg",
       alt: "Cocina moderna",
       caption: "Cocinas equipadas con electrodomésticos de primera línea",
     },
@@ -100,7 +95,7 @@ export default function Constituyentes5151Page() {
       semicovered: "3,1 – 10,2 m²",
       uncovered: null,
       total: "39,4 – 50,3 m²",
-      image: "/images/apartment-interior-modern.jpg",
+      image: "/images/Obra-Constituyentes-divisible.jpg",
       price: "Vendido",
       available: false,
       badge: "Vendido",
@@ -115,7 +110,7 @@ export default function Constituyentes5151Page() {
       semicovered: null,
       uncovered: "Patio 31,6 m²",
       total: "54,1 m²",
-      image: "/images/balcony-grill-cityview.jpg", // Updated image property
+      image: "/images/Obra-Constituyentes-balcony-grill.jpg", // Updated image property
       price: "Vendido",
       available: false,
       badge: "Vendido",
@@ -579,7 +574,7 @@ export default function Constituyentes5151Page() {
           <div className="mt-20">
             <div className="relative rounded-3xl overflow-hidden">
               <Image
-                src="/images/sum-terrace-modern.jpg"
+                src="/images/Obra-Constituyentes-SUM.jpg"
                 alt="Terraza común"
                 width={1200}
                 height={500}
