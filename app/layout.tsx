@@ -5,6 +5,7 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
+import WhatsAppWidget from "@/components/whatsapp-widget"
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   )
