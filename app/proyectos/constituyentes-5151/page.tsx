@@ -39,34 +39,71 @@ export default function Constituyentes5151Page() {
   // Gallery images
   const galleryImages = [
     {
-      src: "/images/constituyentes-5151-exterior.jpg",
+      type: "image",
+      src: "/images/constituyentes-5151-hero.png",
       alt: "Fachada del edificio Constituyentes 5151",
       caption: "Fachada moderna con amplios balcones",
     },
     {
-      src: "/images/Obra-Constituyentes-Hall.jpg",
-      alt: "Hall de entrada Constituyentes 5151",
-      caption: "Hall de entrada con diseño contemporáneo",
+      type: "image",
+      src: "/images/Obra-Constituyentes-cocina.png",
+      alt: "Monoambiente",
+      caption: "Monoambiente",
     },
     {
-      src: "/images/Obra-Constituyentes-luz-natural.jpg",
-      alt: "Living de departamento",
-      caption: "Amplios espacios con excelente iluminación natural",
+      type: "image",
+      src: "/images/Obra-Constituyentes-31.png",
+      alt: "Monoambiente Divisible",
+      caption: "Monoambiente Divisible",
     },
     {
-      src: "/images/Obra-Constituyentes-SUM.jpg",
-      alt: "SUM común",
-      caption: "SUM con terraza equipada",
+      type: "image",
+      src: "/images/Obra-Constituyentes-40.png",
+      alt: "Monoambiente Divisible con patio",
+      caption: "Monoambiente Divisible con patio",
     },
     {
-      src: "/images/monoambiente-bedroom.jpg",
-      alt: "Comedor integrado",
-      caption: "Ambientes con acabados premium",
+      type: "image",
+      src: "/images/three-bedroom-floorplan.png",
+      alt: "Tres Ambientes",
+      caption: "Tres Ambientes",
     },
     {
-      src: "/images/Obra-Constituyentes-cocina.jpg",
-      alt: "Cocina moderna",
-      caption: "Cocinas equipadas con electrodomésticos de primera línea",
+      type: "video",
+      platform: "vimeo",
+      url: "https://player.vimeo.com/video/1120486409?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+      alt: "Video Constituyentes",
+      caption: "Video Constituyentes"
+    },
+    {
+      type: "image",
+      src: "/images/Constituyentes-1.png",
+      alt: "Balcon",
+      caption: "Balcon",
+    },
+    {
+      type: "image",
+      src: "/images/Constituyentes-2.png",
+      alt: "Cuarto",
+      caption: "Cuarto",
+    },
+    {
+      type: "image",
+      src: "/images/Constituyentes-3.png",
+      alt: "Baño",
+      caption: "Baño",
+    },
+    {
+      type: "image",
+      src: "/images/Constituyentes-4.png",
+      alt: "Hall",
+      caption: "Hall",
+    },
+    {
+      type: "image",
+      src: "/images/Constituyentes-5.png",
+      alt: "Hall",
+      caption: "Hall",
     },
   ]
 
@@ -81,10 +118,10 @@ export default function Constituyentes5151Page() {
       semicovered: "4,5 – 7,4 m²",
       uncovered: null,
       total: "34,3 – 41,8 m²",
-      image: "/images/monoambiente-bedroom.jpg",
+      image: "/images/Obra-Constituyentes-cocina.png",
       price: "Vendido",
       available: false,
-      badge: "Vendido",
+      badge: "Entregado",
     },
     {
       id: "type2",
@@ -95,25 +132,25 @@ export default function Constituyentes5151Page() {
       semicovered: "3,1 – 10,2 m²",
       uncovered: null,
       total: "39,4 – 50,3 m²",
-      image: "/images/Obra-Constituyentes-divisible.jpg",
+      image: "/images/Obra-Constituyentes-31.png",
       price: "Vendido",
       available: false,
-      badge: "Vendido",
+      badge: "Entregado",
       note: "hasta 55,2 m² con patio",
     },
     {
       id: "type3",
       title: "Monoambiente con patio",
-      subtitle: "Espacio exterior privado",
+      subtitle: "Monoambiente divisible con patio",
       units: "Superficie cubierta: 43,1 m²",
       covered: "43,1 m²",
       semicovered: null,
       uncovered: "Patio 31,6 m²",
       total: "54,1 m²",
-      image: "/images/Obra-Constituyentes-balcony-grill.jpg", // Updated image property
+      image: "/images/Obra-Constituyentes-40.png", // Updated image property
       price: "Vendido",
       available: false,
-      badge: "Vendido",
+      badge: "Entregado",
     },
     {
       id: "type4",
@@ -127,7 +164,7 @@ export default function Constituyentes5151Page() {
       image: "/images/three-bedroom-floorplan.png", // Updated image property
       price: "Vendido",
       available: false,
-      badge: "Vendido",
+      badge: "Entregado",
     },
   ]
 
@@ -256,6 +293,20 @@ export default function Constituyentes5151Page() {
     setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
   }
 
+  const goToVideo = () => {
+    const videoIndex = galleryImages.findIndex(item => item.type === "video");
+    if (videoIndex !== -1) {
+      setCurrentImageIndex(videoIndex);
+      setShowGalleryModal(true); // opcional, si querés abrir el modal directo en el video
+    }
+  };
+
+  const goToGallery = () => {
+    setCurrentImageIndex(0);
+    setShowGalleryModal(true); // opcional, si querés abrir el modal directo en el video
+  };
+
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -266,7 +317,7 @@ export default function Constituyentes5151Page() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/constituyentes-5151-hero.png"
+            src="/images/constituyentes-5151-hero-up.png"
             alt="Constituyentes 5151 - Fachada del edificio"
             fill
             className="object-cover scale-105 transition-transform duration-[15s] ease-out"
@@ -312,18 +363,18 @@ export default function Constituyentes5151Page() {
 
                   <Button
                     onClick={() => {
-                      // Create a temporary link to download the brochure
-                      const link = document.createElement("a")
-                      link.href = "/brochures/constituyentes-5151-brochure.pdf"
-                      link.download = "Constituyentes-5151-Brochure.pdf"
-                      document.body.appendChild(link)
-                      link.click()
-                      document.body.removeChild(link)
+                      // Create a temporary link to download the brochure from Google Drive
+                      const link = document.createElement("a");
+                      link.href = "https://drive.google.com/uc?export=download&id=1KeFiT3UKb3cRKJcDWWS6fq2tdcrZJEsy";
+                      link.download = "Constituyentes-5151-Brochure.pdf"; // Nombre del archivo al descargar
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
                     }}
                     className="bg-white hover:bg-gray-50 text-[#215977] border-2 border-[#215977] hover:border-[#1a4a63] px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 text-sm sm:text-base lg:text-lg font-medium rounded-full group transition-all duration-500 hover:shadow-2xl hover:shadow-[#215977]/20 hover:scale-105 w-full sm:w-auto min-w-[200px] sm:min-w-[240px] lg:min-w-[280px]"
-                  >
+                  >  
                     <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                    <span>Descargar Brochure</span>
+                    <span>Descargar Book</span>
                   </Button>
                 </div>
               </div>
@@ -352,11 +403,11 @@ export default function Constituyentes5151Page() {
                   </div>
 
                   <Button
-                    onClick={() => setShowGalleryModal(true)}
+                    onClick={goToVideo}
                     className="w-full bg-white/20 hover:bg-white text-white hover:text-[#062b66] py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group"
                   >
                     <Play className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    <span>Ver galería</span>
+                    <span>Acceder al video</span>
                   </Button>
                 </div>
               </div>
@@ -427,7 +478,7 @@ export default function Constituyentes5151Page() {
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#062b66]/10 rounded-full z-0"></div>
                 <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl hover:shadow-[#215977]/20 transition-all duration-500 hover:scale-[1.02]">
                   <Image
-                    src="/images/constituyentes-5151-exterior.jpg"
+                    src="/images/constituyentes-5151-hero.png"
                     alt="Constituyentes 5151 Fachada"
                     width={600}
                     height={700}
@@ -574,7 +625,7 @@ export default function Constituyentes5151Page() {
           <div className="mt-20">
             <div className="relative rounded-3xl overflow-hidden">
               <Image
-                src="/images/Obra-Constituyentes-SUM.jpg"
+                src="/images/Obra-Constituyentes-31.png"
                 alt="Terraza común"
                 width={1200}
                 height={500}
@@ -582,13 +633,9 @@ export default function Constituyentes5151Page() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
                 <div className="p-8 md:p-12 w-full">
-                  <h3 className="text-3xl font-light text-white mb-4">SUM con terraza equipada</h3>
-                  <p className="text-white/80 max-w-2xl mb-8">
-                    Salón de Usos Múltiples con terraza moderna, equipado con parrilla, mobiliario contemporáneo y
-                    espacios de relax al aire libre para el disfrute de todos los residentes.
-                  </p>
+                  <h1 className="text-3xl font-light text-white mb-4">Ver Galeria</h1>
                   <Button
-                    onClick={() => setShowGalleryModal(true)}
+                    onClick={() => goToGallery()}
                     className="bg-white/20 hover:bg-white text-white hover:text-[#062b66] px-8 py-3 rounded-xl transition-all duration-300 backdrop-blur-sm flex items-center gap-2 w-auto"
                   >
                     <Play className="h-5 w-5" />
@@ -936,14 +983,25 @@ export default function Constituyentes5151Page() {
             </button>
 
             <div className="relative h-[80vh]">
-              <Image
-                src={galleryImages[currentImageIndex].src || "/placeholder.svg"}
-                alt={galleryImages[currentImageIndex].alt}
-                fill
-                className="object-contain"
-              />
+              {galleryImages[currentImageIndex].type === "video" ? (
+                <iframe
+                  src={galleryImages[currentImageIndex].url}
+                  title={galleryImages[currentImageIndex].alt}
+                  className="w-full h-full rounded-lg"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <Image
+                  src={galleryImages[currentImageIndex].src || "/placeholder.svg"}
+                  alt={galleryImages[currentImageIndex].alt}
+                  fill
+                  className="object-contain rounded-lg"
+                />
+              )}
 
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6">
+              <div className="absolute bottom-[-35px] left-0 right-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6">
                 <p className="text-white text-lg">{galleryImages[currentImageIndex].caption}</p>
                 <p className="text-white/60 text-sm">
                   {currentImageIndex + 1} / {galleryImages.length}
@@ -965,8 +1023,8 @@ export default function Constituyentes5151Page() {
               </button>
             </div>
 
-            <div className="mt-4 flex gap-2 overflow-x-auto pb-2">
-              {galleryImages.map((image, index) => (
+            <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+              {galleryImages.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
@@ -974,7 +1032,11 @@ export default function Constituyentes5151Page() {
                     currentImageIndex === index ? "border-[#215977] opacity-100" : "border-transparent opacity-60"
                   }`}
                 >
-                  <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
+                  {item.type === "video" ? (
+                    <video src={item.src} className="object-cover w-full h-full" />
+                  ) : (
+                    <Image src={item.src || "/placeholder.svg"} alt={item.alt} fill className="object-cover" />
+                  )}
                 </button>
               ))}
             </div>
