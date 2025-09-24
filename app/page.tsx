@@ -248,7 +248,7 @@ export default function Home() {
               <ProjectCard
                 title="Constituyentes 5151"
                 location="Villa Urquiza"
-                image="/images/constituyentes-5151-exterior.jpg"
+                image="/images/Constituyentes-fachada-1.png"
                 status="Finalizado"
                 completion="2024"
                 units="1 y 3 ambientes"

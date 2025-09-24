@@ -69,13 +69,6 @@ export default function Constituyentes5151Page() {
       caption: "Tres Ambientes",
     },
     {
-      type: "video",
-      platform: "vimeo",
-      url: "https://player.vimeo.com/video/1120486409?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-      alt: "Video Constituyentes",
-      caption: "Video Constituyentes"
-    },
-    {
       type: "image",
       src: "/images/Constituyentes-1.png",
       alt: "Balcon",
@@ -104,6 +97,13 @@ export default function Constituyentes5151Page() {
       src: "/images/Constituyentes-5.png",
       alt: "Hall",
       caption: "Hall",
+    },
+    {
+      type: "video",
+      platform: "vimeo",
+      url: "https://player.vimeo.com/video/1120486409?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+      alt: "Video Constituyentes",
+      caption: "Video Constituyentes"
     },
   ]
 
@@ -146,7 +146,7 @@ export default function Constituyentes5151Page() {
       covered: "43,1 m²",
       semicovered: null,
       uncovered: "Patio 31,6 m²",
-      total: "54,1 m²",
+      total: "74.7 m²",
       image: "/images/Obra-Constituyentes-40.png", // Updated image property
       price: "Vendido",
       available: false,
@@ -160,7 +160,7 @@ export default function Constituyentes5151Page() {
       covered: "64,6 m²",
       semicovered: "12,2 m²",
       uncovered: "Terraza 15,3 m²",
-      total: "82,2 m²",
+      total: "79,9 m²",
       image: "/images/three-bedroom-floorplan.png", // Updated image property
       price: "Vendido",
       available: false,
@@ -365,7 +365,7 @@ export default function Constituyentes5151Page() {
                     onClick={() => {
                       // Create a temporary link to download the brochure from Google Drive
                       const link = document.createElement("a");
-                      link.href = "https://drive.google.com/uc?export=download&id=1KeFiT3UKb3cRKJcDWWS6fq2tdcrZJEsy";
+                      link.href = "https://drive.google.com/uc?export=download&id=1bzmV7z_GzLJqc23I48Y0pO8NdjpjsLRz";
                       link.download = "Constituyentes-5151-Brochure.pdf"; // Nombre del archivo al descargar
                       document.body.appendChild(link);
                       link.click();
