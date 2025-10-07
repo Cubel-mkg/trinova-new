@@ -6,6 +6,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
 import WhatsAppWidget from "@/components/whatsapp-widget"
+import Script from "next/script"
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -27,7 +28,22 @@ export default function RootLayout({
   return (
     <html lang="es" className={kanit.variable}>
       <head>
+        {/* Google Ads Tag */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17506981349"
+        />
+        <Script id="google-ads">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17506981349');
+          `}
+        </Script>
+        {/* Fin Google Ads Tag */}
         <link rel="icon" href="/LOGO_TRINOVA_B&N.svg" />
+
       </head>
       <body className={`${kanit.className} antialiased`}>
         <ScrollToTop />
