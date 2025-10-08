@@ -228,7 +228,7 @@ export default function Home() {
                 location="Villa Urquiza"
                 image="/images/Fachada-aizpurua.png"
                 status="En construcción"
-                completion="2027"
+                completion="2028"
                 units="1, 2, 3 y 4 ambientes"
                 href="/proyectos/aizpurua-2326"
               />
@@ -239,7 +239,7 @@ export default function Home() {
                 location="Caballito"
                 image="/images/Fachada-Nicasio.png"
                 status="En construcción"
-                completion="2027"
+                completion="2028"
                 units="1, 2 y 3 ambientes"
                 href="/proyectos/nicasio-orono-1652"
               />
